@@ -1,0 +1,10 @@
+start{
+number sum;
+number x[100];
+sum=0;
+read:: n;
+for( number i=1; i<=n; i++){
+sum = sum + x[i];
+}
+print:: sum;
+} end
