@@ -1,15 +1,15 @@
 start{
-number a;
-number b;
-number d;
-number gcd;
-read:: a;
-read:: b;
-for( d=1; d<=a; d++){
-if( a%d == 0 and b%d == 0)
-{ gcd = d;}
-}
-print:: 'The gcd is';
-print:: gcd;
+    number a;
+    number b;
+    number d;
+    number gcd;
+    read a;
+    read b;
+    for( d=1; d<=a; d++){
+        if( a%d == 0 and b%d == 0)
+            { gcd = d;}
+    }
+    print "Thrtt";
+    print gcd;
 }
 end

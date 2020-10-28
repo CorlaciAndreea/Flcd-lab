@@ -1,18 +1,18 @@
 start{
-number min;
-number a;
-number b;
-number c;
-read:: a;
-read:: b;
-read:: c;
-min=a;
-if(b<min)
-{ min=b; }
-if(c<min){
-min=c;
-}
-print:: min;
+    number min;
+    number a;
+    number b;
+    number c;
+    read a;
+    read b;
+    read c;
+    min=-10;
+    if(b<min)
+        { min=b; }
+    if(c<min){
+        min=c;
+    }
+    print min;
 } end
 
 

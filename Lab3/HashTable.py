@@ -23,6 +23,7 @@ class Hashtable:
 
     def asciiCode(self, elem):
         s = 0
+        elem.strip("\"")
         for i in range(0, len(elem)):
             s = s + ord(elem[i])
         return s
@@ -48,7 +49,6 @@ class Hashtable:
         prev.next = Node(value)
         return index
 
-
     def find(self, value):
         if isinstance(value, str):
             key = self.asciiCode(value)
@@ -56,6 +56,7 @@ class Hashtable:
             key = value
 
         index = self.hashFunction(key)
+
 
         if self._table[index] is None:
             return -1

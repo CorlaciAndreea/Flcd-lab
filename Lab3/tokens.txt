@@ -28,8 +28,9 @@ for
 (
 )
 ;
-read::
-print::
+read
+print
 start
 end
+
 
