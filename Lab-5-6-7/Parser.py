@@ -210,15 +210,6 @@ class Parser:
         else:
             return 'Not accepted'
 
-    def showResult(self, sequence):
-        result = self.parseSequence(sequence)
-        productions = ""
-        for elem in result:
-            rhs = ""
-            for rhs1 in self.numberedDictionary[elem][1]:
-                rhs += rhs1
-            productions = productions + self.numberedDictionary[elem][0] + "->" + rhs + "\n"
-        return productions
 
     # {0: ['S', ['B', 'A']],
     # 1: ['A', ['#', 'B', 'A']],
@@ -255,32 +246,7 @@ class Parser:
             result.append(newList)
         return result
 
-    def derivString(self, seq):
-        result = self.parseSequence(seq)
-        string = ""
-        rhs = ""
-        for rhs1 in self.numberedDictionary[0][1]:
-            rhs += rhs1
-        string = string + self.numberedDictionary[0][0] + "->" + rhs
-        for elem in result:
-            prod = self.numberedDictionary[elem][1]
-            for i in prod:
-                poz = 0
-                if i in self.grammar.getNonTerminals():
-                    prod2 = self.numberedDictionary[elem + 1][1]
-                    rhs = ""
-                    for rhs1 in prod2:
-                        rhs += rhs1
-                    string = string + "->" + rhs
-                    for t in prod[poz:]:
-                        string += t
 
-                else:
-                    string = string + i
-                    for t in prod[poz:]:
-                        string += t
-                poz += 1
-        return string
 
 
 if __name__ == '__main__':
